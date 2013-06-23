@@ -1,0 +1,15 @@
+<script src="https://rawgithub.com/coreyti/showdown/master/compressed/showdown.js"></script>
+<element name="mark-down">
+  <script>
+    if (this == window)
+      return;
+    this.register({
+      prototype: {
+        readyCallback: function() {
+          var converter = new Showdown.converter();
+          this.innerHTML = converter.makeHtml(this.innerHTML);
+        }
+      }
+    });
+  </script>
+</element>
